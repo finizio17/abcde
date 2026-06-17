@@ -6,18 +6,15 @@ def update_m3u():
     config_file = os.path.join(script_dir, "..", "config.txt")
     m3u_file = os.path.join(script_dir, "..", "iptvmia.m3u")
     
+    # Questo User-Agent fa credere al server Rai di essere una TV LG in Italia
     headers = {
-        "User-Agent": "HbbTV/1.6.1 (+PVR; LG; TV; 2026; SmartTV)"
+        "User-Agent": "Mozilla/5.0 (WebOS; SmartTV; U; it) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.0.0 Safari/537.36",
+        "Referer": "https://www.raiplay.it/",
+        "Origin": "https://www.raiplay.it"
     }
     
-    # Leggiamo la configurazione pulendo ogni possibile spazio extra
     with open(config_file, "r") as f:
-        configs = []
-        for line in f:
-            if '|' in line:
-                parts = line.strip().split('|')
-                # .strip() rimuove spazi prima e dopo il nome del canale
-                configs.append((parts[0].strip(), parts[1].strip()))
+        configs = [(line.strip().split('|')[0].strip(), line.strip().split('|')[1].strip()) for line in f if '|' in line]
     
     with open(m3u_file, "r", encoding="utf-8") as f:
         lines = f.readlines()
@@ -29,7 +26,6 @@ def update_m3u():
         new_lines.append(line)
         
         for name, relinker in configs:
-            # Confronto flessibile: cerchiamo il nome del canale nella riga
             if name in line:
                 i += 1
                 while i < len(lines) and (lines[i].strip().startswith("http") or lines[i].strip().startswith("#")):
@@ -38,11 +34,14 @@ def update_m3u():
                     i += 1
                 
                 try:
+                    # Usiamo una sessione per mantenere i cookie
                     session = requests.Session()
+                    # Primo step: otteniamo il token di sessione
+                    session.get("https://www.raiplay.it/", headers=headers)
+                    # Secondo step: chiamiamo il relinker con gli stessi header
                     response = session.get(relinker, headers=headers, allow_redirects=True)
                     
-                    if "playlist.m3u8" in response.text:
-                        # Estrazione robusta
+                    if "m3u8" in response.text:
                         for link in response.text.split('"'):
                             if "m3u8" in link and "http" in link:
                                 new_lines.append(link + "\n")
@@ -51,7 +50,7 @@ def update_m3u():
                         new_lines.append(response.url + "\n")
                         
                 except Exception as e:
-                    print(f"Errore nella risoluzione di {name}: {e}")
+                    print(f"Errore: {e}")
                     
                 i -= 1
                 break

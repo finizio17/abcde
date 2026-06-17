@@ -1,36 +1,40 @@
 import requests
 
 def update_m3u():
-    # URL di test per Rai 1
-    url_relinker = "https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=2606803&output=16"
-    file_path = "iptvmia.m3u"
+    config_file = "config.txt"
+    m3u_file = "iptvmia.m3u"
     
-    # Risolviamo il nuovo URL
-    r = requests.get(url_relinker, allow_redirects=True)
-    new_url = r.url
+    # Leggiamo i link sorgente dal file di config
+    with open(config_file, "r") as f:
+        configs = [line.strip().split('|') for line in f if '|' in line]
     
-    with open(file_path, "r", encoding="utf-8") as f:
+    # Leggiamo la lista m3u
+    with open(m3u_file, "r", encoding="utf-8") as f:
         lines = f.readlines()
         
     new_lines = []
-    skip_next = False
-    
-    for i in range(len(lines)):
+    i = 0
+    while i < len(lines):
         line = lines[i]
-        
-        # Se dobbiamo saltare la riga precedente (il vecchio link), lo facciamo
-        if skip_next:
-            new_lines.append(new_url + "\n")
-            skip_next = False
-            continue
-            
         new_lines.append(line)
         
-        # Cerchiamo la riga che identifica Rai 1
-        if "Rai 1" in line:
-            skip_next = True
-            
-    with open(file_path, "w", encoding="utf-8") as f:
+        # Se troviamo un canale configurato
+        for name, relinker in configs:
+            if name in line:
+                i += 1
+                # Trovato! Ora saltiamo le righe "vecchie" (il relinker o il link scaduto)
+                # finché non arriviamo a una riga che non è un link http
+                while i < len(lines) and (lines[i].strip().startswith("http") or lines[i].strip().startswith("#")):
+                    i += 1
+                
+                # Inseriamo il nuovo link risolto
+                r = requests.get(relinker, allow_redirects=True)
+                new_lines.append(r.url + "\n")
+                i -= 1 # Torniamo indietro di uno per non perdere la riga successiva
+                break
+        i += 1
+                
+    with open(m3u_file, "w", encoding="utf-8") as f:
         f.writelines(new_lines)
 
 if __name__ == "__main__":

@@ -113,7 +113,7 @@ https://live03-col.msf.cdn.mediaset.net/live/ch-ki/ki-clr.isml/manifest.mpd
 #EXTINF:-1 tvg-chno="23" tvg-id="Rai.5..5023.it" tvg-name="Rai 5 HD" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/23-rai5hd.png", Rai 5 HD
 #EXTSIZE: Medium
 #EXTVLCOPT:http-user-agent=HbbTV/1.6.1
-https://raicinque1-push.cdn.netrw.it/@syna-token=st=1781650678~hmac=048f7dcdcae9e9117a035adeea169fd8e8848d0bfd1fca14b9cdc3ee1b988992/rai/hls-enc/cinque/rai5/playlist_ma.m3u8
+https://raicinque1-push.cdn.netrw.it/@syna-token=st=1781702898~hmac=42d8d3b98847522b7349fc78d593ae71f373eceb65c3f5888aacde9b55fa926d/rai/hls-enc/cinque/rai5/playlist_ma.m3u8
 
 #EXTINF:-1 tvg-chno="24" tvg-id="Rai.Movie..5024.it" tvg-name="Rai Movie HD" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/24-raimoviehd.png", Rai Movie HD
 #EXTSIZE: Medium
@@ -288,7 +288,7 @@ http://45.136.153.199/RaiScuola/mono.m3u8
 #EXTINF:-1 tvg-chno="58" tvg-id="RAI.Sport...227.it" tvg-name="Rai Sport HD" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/58-raisporthd.png", Rai Sport HD
 #EXTSIZE: Medium
 #EXTVLCOPT:http-user-agent=HbbTV/1.6.1
-https://streamcdnm15-8e7439fdb1694c8da3a0fd63e4dda518.msvdn.net/raisportuno1/hls/raisport1_2400/chunklist.m3u8?baseuri=%2Fraisportuno1%2Fhls%2F&tstart=0&tend=1781729524&tk2=416529731b0f6d3ec0acad4d9eae2938a8d27eb8c41af1eb7df17e8433ea85d6
+http://45.136.153.199:80/RaiSport/mono.m3u8
 
 #EXTINF:-1 tvg-chno="59" tvg-id="Motor.Trend.it" tvg-name="Discovery Turbo" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/59-discoveryturbo.png", Discovery Turbo
 #EXTSIZE: Medium

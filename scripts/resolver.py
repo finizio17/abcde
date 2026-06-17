@@ -1,8 +1,11 @@
 import requests
+import os
 
 def update_m3u():
-    config_file = "config.txt"
-    m3u_file = "iptvmia.m3u"
+    # Definiamo i percorsi in modo assoluto per evitare errori di directory
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    config_file = os.path.join(script_dir, "..", "config.txt")
+    m3u_file = os.path.join(script_dir, "..", "iptvmia.m3u")
     
     # Leggiamo i link sorgente dal file di config
     with open(config_file, "r") as f:
@@ -22,15 +25,21 @@ def update_m3u():
         for name, relinker in configs:
             if name in line:
                 i += 1
-                # Trovato! Ora saltiamo le righe "vecchie" (il relinker o il link scaduto)
-                # finché non arriviamo a una riga che non è un link http
+                # Saltiamo le righe "vecchie" (il relinker o il link scaduto)
                 while i < len(lines) and (lines[i].strip().startswith("http") or lines[i].strip().startswith("#")):
+                    # Se incontriamo un altro tag #EXT, ci fermiamo
+                    if lines[i].strip().startswith("#EXTINF"):
+                        break
                     i += 1
                 
                 # Inseriamo il nuovo link risolto
-                r = requests.get(relinker, allow_redirects=True)
-                new_lines.append(r.url + "\n")
-                i -= 1 # Torniamo indietro di uno per non perdere la riga successiva
+                try:
+                    r = requests.get(relinker, allow_redirects=True)
+                    new_lines.append(r.url + "\n")
+                except Exception as e:
+                    print(f"Errore nella risoluzione di {name}: {e}")
+                    
+                i -= 1 # Torniamo indietro di uno per non perdere la riga corrente
                 break
         i += 1
                 

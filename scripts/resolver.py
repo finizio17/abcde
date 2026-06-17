@@ -2,19 +2,22 @@ import requests
 import os
 
 def update_m3u():
-    # Definiamo i percorsi
     script_dir = os.path.dirname(os.path.abspath(__file__))
     config_file = os.path.join(script_dir, "..", "config.txt")
     m3u_file = os.path.join(script_dir, "..", "iptvmia.m3u")
     
-    # User-Agent che simula una Smart TV per convincere il server Rai
     headers = {
         "User-Agent": "HbbTV/1.6.1 (+PVR; LG; TV; 2026; SmartTV)"
     }
     
-    # Leggiamo i link sorgente dal file di config
+    # Leggiamo la configurazione pulendo ogni possibile spazio extra
     with open(config_file, "r") as f:
-        configs = [line.strip().split('|') for line in f if '|' in line]
+        configs = []
+        for line in f:
+            if '|' in line:
+                parts = line.strip().split('|')
+                # .strip() rimuove spazi prima e dopo il nome del canale
+                configs.append((parts[0].strip(), parts[1].strip()))
     
     with open(m3u_file, "r", encoding="utf-8") as f:
         lines = f.readlines()
@@ -26,6 +29,7 @@ def update_m3u():
         new_lines.append(line)
         
         for name, relinker in configs:
+            # Confronto flessibile: cerchiamo il nome del canale nella riga
             if name in line:
                 i += 1
                 while i < len(lines) and (lines[i].strip().startswith("http") or lines[i].strip().startswith("#")):
@@ -33,17 +37,16 @@ def update_m3u():
                         break
                     i += 1
                 
-                # Usiamo una sessione con header simulati
                 try:
                     session = requests.Session()
                     response = session.get(relinker, headers=headers, allow_redirects=True)
                     
-                    # Se il relinker restituisce ancora una pagina web, 
-                    # forziamo il recupero del link m3u8 che Rai usa per le TV
                     if "playlist.m3u8" in response.text:
-                        # Estrazione semplice del link m3u8 dalla risposta
-                        final_url = [l for l in response.text.split('"') if "m3u8" in l][0]
-                        new_lines.append(final_url + "\n")
+                        # Estrazione robusta
+                        for link in response.text.split('"'):
+                            if "m3u8" in link and "http" in link:
+                                new_lines.append(link + "\n")
+                                break
                     else:
                         new_lines.append(response.url + "\n")
                         

@@ -268,7 +268,7 @@ https://liveac115b.b-cdn.net/canale3.smil/chunklist_b1100000.m3u8
 #EXTINF:-1 tvg-chno="54" tvg-id="Rai.Storia..5054.it" tvg-name="Rai Storia HD" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/54-raistoriahd.png", Rai Storia HD
 #EXTSIZE: Medium
 #EXTVLCOPT:http-user-agent=HbbTV/1.6.1
-https://streamcdnm7-8e7439fdb1694c8da3a0fd63e4dda518.msvdn.net/raistoria1/hls/playlist_mo.m3u8?baseuri=%2Fraistoria1%2Fhls%2F&tstart=0&tend=1781650765&tof=86400&tk2=a538b6e48d8e20ae63ca28947c5e6a144703cee5821a0b1060232e409f66ceb8
+https://ilglobotv-live.akamaized.net/channels/RAIStoria/Live.m3u8
 
 #EXTINF:-1 tvg-chno="55" tvg-id="Mediaset.Extra.it" tvg-name="Mediaset Extra HD" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/55-mediasetextrahd.png", Mediaset Extra HD
 #EXTSIZE: Medium

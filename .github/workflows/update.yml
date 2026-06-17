@@ -1,0 +1,27 @@
+name: Aggiorna Lista IPTV
+on:
+  schedule:
+    - cron: '0 */6 * * *' # Si attiva ogni 6 ore
+  workflow_dispatch:      # Ti permette di farlo partire manualmente quando vuoi
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: Installa Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Installa librerie
+        run: pip install requests
+      - name: Esegui script
+        run: python scripts/resolver.py
+      - name: Salva modifiche
+        run: |
+          git config user.name "Automazione"
+          git config user.email "automazione@bot.com"
+          git add lista_finale.m3u
+          git commit -m "Aggiornata lista IPTV"
+          git push

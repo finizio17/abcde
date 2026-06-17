@@ -30,10 +30,10 @@ jobs:
           git config user.name "GitHub Action Bot"
           git config user.email "bot@github.com"
           git add iptvmia.m3u
-          # Controlla se ci sono modifiche prima di fare commit
           if git diff --staged --quiet; then
             echo "Nessuna modifica rilevata, niente da fare."
           else
             git commit -m "Aggiornamento automatico link Rai 1"
-            git push
+            git pull --rebase origin main
+            git push origin main
           fi

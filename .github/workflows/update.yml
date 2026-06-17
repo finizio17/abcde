@@ -1,27 +1,39 @@
 name: Aggiorna Lista IPTV
+
 on:
   schedule:
     - cron: '0 */6 * * *' # Si attiva ogni 6 ore
-  workflow_dispatch:      # Ti permette di farlo partire manualmente quando vuoi
+  workflow_dispatch:      # Ti permette di lanciarlo manualmente quando vuoi
+
 jobs:
-  build:
+  update-list:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
-      - name: Installa Python
+      - name: Checkout del codice
+        uses: actions/checkout@v3
+
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      - name: Installa librerie
+
+      - name: Installa dipendenze
         run: pip install requests
-      - name: Esegui script
+
+      - name: Esecuzione script di risoluzione
         run: python scripts/resolver.py
-      - name: Salva modifiche
+
+      - name: Commit e Push delle modifiche
         run: |
-          git config user.name "Automazione"
-          git config user.email "automazione@bot.com"
-          git add lista_finale.m3u
-          git commit -m "Aggiornata lista IPTV"
-          git push
+          git config user.name "GitHub Action Bot"
+          git config user.email "bot@github.com"
+          git add iptvmia.m3u
+          # Controlla se ci sono modifiche prima di fare commit
+          if git diff --staged --quiet; then
+            echo "Nessuna modifica rilevata, niente da fare."
+          else
+            git commit -m "Aggiornamento automatico link Rai 1"
+            git push
+          fi

@@ -49,7 +49,7 @@ https://streaming.aurora.enhanced.live/live/mtc/v1/master/4594282f9c99190a14f881
 #EXTVLCOPT:http-user-agent=HbbTV/1.6.1
 https://a8a02dd9a49a4fc9810743615c65ab73.msvdn.net/live/S76734991/i6NeNqLYaspb/playlist.m3u8
 
-#EXTINF:-1 tvg-chno="11" tvg-name="LaC" tvg-logo="https://channels.zappr.stream/logos/it/optimized/lactv.svg", LaC
+#EXTINF:-1 tvg-chno="11" tvg-name="LaC" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/LaC_TV_-_Logo_2021.svg/1920px-LaC_TV_-_Logo_2021.svg.png", LaC
 #EXTSIZE: Medium
 #EXTVLCOPT:http-user-agent=HbbTV/1.6.1
 https://f5842579ff984c1c98d63b8d789673eb.msvdn.net/live/S47282891/JWjL3xqPf4bX/playlist.m3u8
@@ -64,7 +64,7 @@ https://streamcdnr9-7640f9b3494e4d1fb307f886e3b60402.msvdn.net/live/S41081260/oh
 #EXTVLCOPT:http-user-agent=HbbTV/1.6.1
 https://64b16f23efbee.streamlock.net/calabriatv/calabriatv/playlist.m3u8
 
-#EXTINF:-1 tvg-chno="14" tvg-name="RTI" tvg-logo="https://channels.zappr.stream/logos/it/optimized/rticalabria.webp", RTI
+#EXTINF:-1 tvg-chno="14" tvg-name="RTI Calabria" tvg-logo="https://channels.zappr.stream/logos/it/optimized/rticalabria.webp", RTI Calabria
 #EXTSIZE: Medium
 #EXTVLCOPT:http-user-agent=HbbTV/1.6.1
 https://stream.ets-sistemi.it:8081/rticalabria/index.m3u8
@@ -79,7 +79,7 @@ https://59d7d6f47d7fc.streamlock.net/esperiatv/esperiatv/playlist.m3u8
 #EXTVLCOPT:http-user-agent=HbbTV/1.6.1
 https://64b16f23efbee.streamlock.net/telespaziotv-clone/telespaziotv-clone/playlist.m3u8
 
-#EXTINF:-1 tvg-chno="17" tvg-name="LaC On Air" tvg-logo="https://channels.zappr.stream/logos/it/optimized/laconair.svg", LaC On Air
+#EXTINF:-1 tvg-chno="17" tvg-name="LaC On Air" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/LaC_TV_-_Logo_2021.svg/1920px-LaC_TV_-_Logo_2021.svg.png", LaC On Air
 #EXTSIZE: Medium
 #EXTVLCOPT:http-user-agent=HbbTV/1.6.1
 https://f5842579ff984c1c98d63b8d789673eb.msvdn.net/live/100197/SOrBDPy/playlist.m3u8

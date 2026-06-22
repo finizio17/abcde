@@ -123,7 +123,7 @@ https://raimovie3-live.akamaized.net/hls/live/2018010/raimovie3/raimovie3/playli
 #EXTINF:-1 tvg-chno="25" tvg-id="Rai.Premium..5025.it" tvg-name="Rai Premium HD" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/25-raipremiumhd.png", Rai Premium HD
 #EXTSIZE: Medium
 #EXTVLCOPT:http-user-agent=HbbTV/1.6.1
-https://raipremium1-push.cdn.netrw.it/@syna-token=st=1781737517~hmac=dd652fb02257c35bea3c959d9d769eee1efc718bda2c7af0970cb05a3f09bf1c/rai/hls-enc/premium/raipremium/playlist_ma.m3u8
+https://raipremium1-push.cdn.netrw.it/@syna-token=st=1782140775~hmac=f51ce8d953238e96f5495cfa3785924290bb840716987491294c7a5a17edc384/rai/hls-enc/premium/raipremium/playlist_ma.m3u8
 
 #EXTINF:-1 tvg-chno="26" tvg-id="cielo.it" tvg-name="Cielo HD" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/26-cielohd.png", Cielo HD
 #EXTSIZE: Medium

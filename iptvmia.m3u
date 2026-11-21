@@ -92,7 +92,7 @@ https://stream.ets-sistemi.it:2020/hls/telea1-live/telea1-live.m3u8
 #EXTINF:-1 tvg-chno="19" tvg-name="Tele Dehon" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/19-teledehon.png", Tele Dehon
 #EXTSIZE: Medium
 #EXTVLCOPT:http-user-agent=HbbTV/1.6.1
-https://5f22d76e220e1.streamlock.net/rtmpteledehon/smil:rtmpteledehon.smil/chunklist_w1250153136_b3000000_slen.m3u8
+https://64b16f23efbee.streamlock.net/teledehonapp/ngrp:teledehonapp_all/chunklist_w1091805831_b3131072.m3u8
 
 #EXTINF:-1 tvg-chno="20" tvg-id="20.it" tvg-name="20Mediaset HD" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/20-20hd.png", 20Mediaset HD
 #EXTSIZE: Medium
@@ -112,7 +112,7 @@ https://live03-col.msf.cdn.mediaset.net/live/ch-ki/ki-clr.isml/manifest.mpd
 #EXTINF:-1 tvg-chno="23" tvg-id="Rai.5..5023.it" tvg-name="Rai 5 HD" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/23-rai5hd.png", Rai 5 HD
 #EXTSIZE: Medium
 #EXTVLCOPT:http-user-agent=HbbTV/1.6.1
-https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=395276&output=7&forceUserAgent=raiplayappletv
+http://team-tv.co:81/rai5/index.m3u8
 
 #EXTINF:-1 tvg-chno="24" tvg-id="Rai.Movie..5024.it" tvg-name="Rai Movie HD" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/24-raimoviehd.png", Rai Movie HD
 #EXTSIZE: Medium

@@ -278,7 +278,7 @@ https://live03-col.msf.cdn.mediaset.net/live/ch-kq/kq-clr.isml/manifest.mpd
 #EXTVLCOPT:http-user-agent=HbbTV/1.6.1
 https://streaming.aurora.enhanced.live/live/mpc/enl0eG1mLmVncmVzcy5mZDJ2eHI=/out/v1/IT_SIMULCAST/HGTV/CMAF/index.m3u8
 
-#EXTINF:-1 tvg-chno="57" tvg-id="Rai.Italiana..5057.it" tvg-name="Italiana HD" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/57-raiscuolahd.png", Rai Scuola HD
+#EXTINF:-1 tvg-chno="57" tvg-id="Rai.Italiana.5057.it" tvg-name="Italiana HD" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/57-raiscuolahd.png", Rai Italiana HD
 #EXTSIZE: Medium
 #EXTVLCOPT:http-user-agent=HbbTV/1.6.1
 https://raiscuola1-push.cdn.netrw.it/@syna-token=st=1795304149~hmac=a55ffa3a345478278722fe8f0c98aee2f88dcf21fec6cf24248565994ff2dcdd/rai/hls-enc/scuola/raiscuola_2400/chunklist.m3u8

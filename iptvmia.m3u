@@ -86,7 +86,7 @@ https://f5842579ff984c1c98d63b8d789673eb.msvdn.net/live/100197/SOrBDPy/playlist.
 #EXTINF:-1 tvg-chno="18" tvg-name="Tele A1" tvg-logo="https://channels.zappr.stream/logos/it/optimized/telea1.webp", Tele A1
 #EXTSIZE: Medium
 #EXTVLCOPT:http-user-agent=HbbTV/1.6.1
-https://stream.ets-sistemi.it:8081/telea1-live/index.m3u8
+https://stream.ets-sistemi.it:2020/hls/telea1-live/telea1-live.m3u8
 
 
 #EXTINF:-1 tvg-chno="19" tvg-name="Tele Dehon" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/19-teledehon.png", Tele Dehon

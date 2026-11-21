@@ -66,7 +66,7 @@ https://64b16f23efbee.streamlock.net/calabriatv/calabriatv/playlist.m3u8
 #EXTINF:-1 tvg-chno="14" tvg-name="RTI Calabria" tvg-logo="https://channels.zappr.stream/logos/it/optimized/rticalabria.webp", RTI Calabria
 #EXTSIZE: Medium
 #EXTVLCOPT:http-user-agent=HbbTV/1.6.1
-https://stream.ets-sistemi.it:8081/rticalabria/index.m3u8
+https://stream.ets-sistemi.it:2020/hls/rticalabria/rticalabria.m3u8
 
 #EXTINF:-1 tvg-chno="15" tvg-id="Esperia TV" tvg-name="Esperia TV" tvg-logo="https://channels.zappr.stream/logos/it/optimized/esperiatv.webp", Esperia TV
 #EXTSIZE: Medium
